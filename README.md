@@ -39,3 +39,7 @@ If you have a problem, come to my discord server. If you don't understand Python
 - This system opens multiple background sites, so make sure you have plenty of RAM or perform this operation on an unused computer. (It could be on a powerful virtual server.)
 
 - If the audience delivery takes too long and sends only a few viewers, close the client and reopen it, then repeat the same steps. (Proxy sites can sometimes slow down.)
+
+# ⚠️Legal⚠️
+
+The software designed to perform website security testing. The author is not responsible for any illegal use of these programs. This is 100% educational, please do not misuse this tool. 
