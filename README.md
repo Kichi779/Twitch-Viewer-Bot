@@ -30,6 +30,9 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 - **After completing the installation process, make sure that you have successfully installed the chromedriver.**
 
+### Chrome location
+chrome_path = 'D:\Program Files\Google\Chrome\Application\chrome.exe' This is how the file path is set in the code. If you don't change it according to your own, the code will not work.
+
 - **Then run the run.bat file or double click the main.py file.**
 
 If you have a problem, come to my discord server. If you don't understand Python, you can also come to my discord server.
