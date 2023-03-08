@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/92625816/223770986-79017b4f-dc14-44b9-
 
 - ### Install the chromedriver version compatible with the installed version of Google Chrome on your computer. ⚠️
 
-  https://sites.google.com/a/chromium.org/chromedriver/downloads
+  https://sites.google.com/chromium.org/driver/?pli=1
   
 ```sh
 git clone https://github.com/Kichi779/Twitch-Viewer-Bot kichiviewerbot
