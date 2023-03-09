@@ -8,6 +8,8 @@ This software allows you to send viewers to your Twitch live stream without the 
 
 ⚠️ it is recommended to use this software on another computer (not the one you are streaming from) or on a computer with a large amount of RAM because it opens a lot of hidden tabs in the background and can send as many viewers as you want to the stream.
 
+The working logic is simple. Blockaway.net is a proxy website that connects to the website you want with proxies, and this code automates the process with Selenium.
+
 # Preview 💬
 https://user-images.githubusercontent.com/92625816/223770986-79017b4f-dc14-44b9-bd88-0a70aaeda2ee.mp4
 
