@@ -63,7 +63,7 @@ for i in range(proxy_count):
     text_box.send_keys(Keys.RETURN)
 
 
-input("Viewers have all been sent...")
+input("Viewers have all been sent. You can press enter to close it...")
 
 # ==========================================
 # Copyright 2023 Kichi779
