@@ -63,7 +63,7 @@ for i in range(proxy_count):
     text_box.send_keys(Keys.RETURN)
 
 
-input("The specified proxy site has been opened. Please do not click the X button on the top right, press a button to close the sites...")
+input("Viewers have all been sent...")
 
 # ==========================================
 # Copyright 2023 Kichi779
