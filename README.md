@@ -50,3 +50,8 @@ If you have a problem, come to my discord server. If you don't understand Python
 # ⚠️Legal⚠️
 
 The software designed to perform website security testing. The author is not responsible for any illegal use of these programs. This is 100% educational, please do not misuse this tool. 
+
+If there is a legal problem, please contact my e-mail address. 
+
+kichi779@protonmail.com
+
