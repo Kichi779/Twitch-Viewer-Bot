@@ -2,6 +2,7 @@
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ[Discord](https://discord.gg/aVk4JUFukk) 
 ㅤ[Github](https://github.com/Kichi779)
 
+
 ### No need for a proxy. ⚠️
 ### Please leave a star for the project. This project is free and open source. ⭐ You can leave a star from the top right. ⭐
 
@@ -46,6 +47,9 @@ If you have a problem, come to my discord server. If you don't understand Python
 - This system opens multiple background sites, so make sure you have plenty of RAM or perform this operation on an unused computer. (It could be on a powerful virtual server.)
 
 - If the audience delivery takes too long and sends only a few viewers, close the client and reopen it, then repeat the same steps. (Proxy sites can sometimes slow down.)
+
+# You can automate this very cheaply. Visit my Discord.
+
 
 # ⚠️Legal⚠️
 
