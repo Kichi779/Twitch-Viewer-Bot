@@ -47,7 +47,7 @@ driver = webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_opt
 
 
 
-driver.get('https://www.blockaway.net/')
+driver.get('https://www.kichi779.online/')
 
 text_box = driver.find_element(By.ID, 'url')
 text_box.send_keys(f'www.twitch.tv/{twitch_username}')
@@ -56,7 +56,7 @@ text_box.send_keys(f'www.twitch.tv/{twitch_username}')
 text_box.send_keys(Keys.RETURN)
 
 for i in range(proxy_count):
-    driver.execute_script("window.open('https://www.blockaway.net/')")
+    driver.execute_script("window.open('https://www.kichi779.online/')")
     driver.switch_to.window(driver.window_handles[-1])
     text_box = driver.find_element(By.ID, 'url')
     text_box.send_keys(f'www.twitch.tv/{twitch_username}')
