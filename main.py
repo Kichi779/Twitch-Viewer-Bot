@@ -48,7 +48,7 @@ driver = webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_opt
 
 
 
-driver.get('https://www.kichi779.online/')
+driver.get('https://www.blockaway.net')
 
 text_box = driver.find_element(By.ID, 'url')
 text_box.send_keys(f'www.twitch.tv/{twitch_username}')
