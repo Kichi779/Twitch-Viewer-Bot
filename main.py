@@ -43,7 +43,7 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument("--mute-audio")
 chrome_options.add_argument('--disable-dev-shm-usage')
 chrome_options.binary_location = chrome_path
-
+driver = webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_options)
 
 
 
