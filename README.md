@@ -1,5 +1,5 @@
 ![219774639-6c550f44-ed0c-4dcd-ba09-f87836dcbaa3 (1)](https://user-images.githubusercontent.com/92625816/223582987-a08243f3-ea2e-401c-adc0-8c58731f1d61.jpg)
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ[Discord](https://discord.gg/aVk4JUFukk) 
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
 ㅤ[Github](https://github.com/Kichi779)
 
 
@@ -40,7 +40,6 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 - **Then run the run.bat file or double click the main.py file.**
 
-If you have a problem, come to my discord server. If you don't understand Python, you can also come to my discord server.
 
 # Usage recommendations 📖
 
@@ -48,7 +47,7 @@ If you have a problem, come to my discord server. If you don't understand Python
 
 - If the audience delivery takes too long and sends only a few viewers, close the client and reopen it, then repeat the same steps. (Proxy sites can sometimes slow down.)
 
-# You can automate this very cheaply. Visit my Discord.
+
 
 
 # ⚠️Legal⚠️
