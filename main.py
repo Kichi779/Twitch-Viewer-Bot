@@ -6,7 +6,7 @@ from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import os
 
-os.system(f"title Kichi779 - Twitch Viewer Bot @kichi#4622 ")
+os.system(f"title Kichi779 - Twitch Viewer Bot @kichi#0779 ")
 
 print(Colorate.Vertical(Colors.blue_to_purple, Center.XCenter("""
            
@@ -43,7 +43,6 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument("--mute-audio")
 chrome_options.add_argument('--disable-dev-shm-usage')
 chrome_options.binary_location = chrome_path
-driver = webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_options)
 
 
 
