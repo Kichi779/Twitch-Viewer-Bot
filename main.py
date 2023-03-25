@@ -6,9 +6,11 @@ from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import os
 
+
+
 os.system(f"title Kichi779 - Twitch Viewer Bot @kichi#0779 ")
 
-print(Colorate.Vertical(Colors.blue_to_purple, Center.XCenter("""
+print(Colorate.Vertical(Colors.green_to_cyan, Center.XCenter("""
            
                                    ▄█   ▄█▄  ▄█    ▄████████    ▄█    █▄     ▄█  
                                    ███ ▄███▀ ███   ███    ███   ███    ███   ███  
@@ -20,7 +22,7 @@ print(Colorate.Vertical(Colors.blue_to_purple, Center.XCenter("""
                                    ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
                                    ▀                                             
             Improvements can be made to the code. If you're getting an error, visit my discord.
-                                       Discord https://discord.gg/aVk4JUFukk       
+                                                 Discord Kichi#0779    
                                        Github  https://github.com/kichi779          
                        
                       
@@ -32,8 +34,12 @@ chrome_path = 'D:\Program Files\Google\Chrome\Application\chrome.exe'
 # The driver that has the same version as your currently installed Google chrome must be installed.
 driver_path = 'chromedriver.exe'
 
-twitch_username = input("Enter your channel name (e.g Kichi779): ")
-proxy_count = int(input("How many proxy sites do you want to open? (Viewer to send)"))
+twitch_username = input(Colorate.Vertical(Colors.green_to_blue, ("Enter your channel name (e.g Kichi779): ")))
+proxy_count = int(input(Colorate.Vertical(Colors.cyan_to_blue, ("How many proxy sites do you want to open? (Viewer to send)"))))
+
+
+
+
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--disable-logging')
@@ -47,7 +53,9 @@ driver = webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_opt
 
 
 
+
 driver.get('https://www.blockaway.net')
+
 
 text_box = driver.find_element(By.ID, 'url')
 text_box.send_keys(f'www.twitch.tv/{twitch_username}')
@@ -63,7 +71,9 @@ for i in range(proxy_count):
     text_box.send_keys(Keys.RETURN)
 
 
-input("Viewers have all been sent. You can press enter to close it...")
+
+
+input(Colorate.Vertical(Colors.red_to_blue,("Viewers have all been sent. You can press enter to close it...")))
 
 # ==========================================
 # Copyright 2023 Kichi779
