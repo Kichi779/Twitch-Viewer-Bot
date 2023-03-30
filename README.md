@@ -47,7 +47,10 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 - If the audience delivery takes too long and sends only a few viewers, close the client and reopen it, then repeat the same steps. (Proxy sites can sometimes slow down.)
 
-
+# Stars ⭐
+- Send more viewers and monetize ads / 30 Star ⭐ ❌
+- Viewers appear in the channel list / 60 Star ⭐⭐ ❌
+- You can send viewers over the internet with just one click without downloading / 100 Star ⭐⭐⭐ ❌
 
 
 # ⚠️Legal⚠️
