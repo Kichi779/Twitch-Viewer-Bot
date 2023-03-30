@@ -22,8 +22,8 @@ print(Colorate.Vertical(Colors.green_to_cyan, Center.XCenter("""
                                    ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
                                    ▀                                             
             Improvements can be made to the code. If you're getting an error, visit my discord.
-                                                 Discord Kichi#0779    
-                                       Github  https://github.com/kichi779          
+                                        Discord discord.gg/AFV9m8UXuT    
+                                        Github  github.com/kichi779          
                        
                       
                       """)))
