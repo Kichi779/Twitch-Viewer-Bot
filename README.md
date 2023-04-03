@@ -17,6 +17,9 @@ This software allows you to send viewers to your Twitch live stream without the 
 https://user-images.githubusercontent.com/92625816/223770986-79017b4f-dc14-44b9-bd88-0a70aaeda2ee.mp4
 
 # 📥 Installation & Usage
+
+- If you have problems with the installation, come to my [discord server](https://discord.gg/AFV9m8UXuT)
+
 - Python must be installed
 - If your Python is not installed, download the latest version (3.11) of python and make sure to click on the 'ADD TO PATH' during installation.
 
