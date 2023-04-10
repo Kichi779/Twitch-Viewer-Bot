@@ -59,7 +59,7 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ https://kichi779shop.mysellix.io/en-en/
 
-[![Animation1](https://user-images.githubusercontent.com/92625816/230116083-0fd31c4b-a058-4baa-add6-585292097b58.gif)](https://kichi779shop.mysellix.io/en-en/)
+ [![Shop](https://user-images.githubusercontent.com/92625816/230799946-2af1a68f-ebcf-4379-9d00-0921e9c799bb.png)](https://github.com/Kichi779/Kichi779-SMM-Shop)
 
 
 # ⚠️Legal⚠️
