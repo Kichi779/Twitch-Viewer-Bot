@@ -57,9 +57,9 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 # [🛒 Shop](https://kichi779shop.mysellix.io/en-en/)
 
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤMy Websiteㅤ https://kichi779shop.mysellix.io/en-en/
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤMy Websiteㅤ kichi779shop.mysellix.io/en-en/
 
-                             Etsy https://www.etsy.com/shop/Kichi779Shop
+                             Etsy etsy.com/shop/Kichi779Shop
 
 
 
