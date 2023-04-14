@@ -30,7 +30,7 @@ print(Colorate.Vertical(Colors.green_to_cyan, Center.XCenter("""
 
 
 # Chrome location
-chrome_path = 'D:\Program Files\Google\Chrome\Application\chrome.exe'
+chrome_path = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
 # The driver that has the same version as your currently installed Google chrome must be installed.
 driver_path = 'chromedriver.exe'
 
