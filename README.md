@@ -41,6 +41,9 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 - **Then run the run.bat file or double click the main.py file.**
 
+- **After opening the program, you need to select a proxy server 1 2 3... select the desired proxy server by entering the numbers (recommended proxy server 1. it is a proxy server)**
+
+- **Enter your channel name (example: kichi779) and then enter how many viewers you want to send. if you want to send 20, it is recommended to write 30**
 
 # Usage recommendations 📖
 
