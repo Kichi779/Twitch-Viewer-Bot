@@ -7,7 +7,6 @@ from pystyle import Center, Colors, Colorate
 import os
 import time
 
-
 def check_for_updates():
     try:
         r = requests.get("https://raw.githubusercontent.com/Kichi779/Twitch-Viewer-Bot/main/version.txt")
@@ -25,60 +24,92 @@ def check_for_updates():
 def main():
     if not check_for_updates():
         return
+def print_announcement():
+    try:
+        r = requests.get("https://raw.githubusercontent.com/Kichi779/Twitch-Viewer-Bot/main/announcement.txt", headers={"Cache-Control": "no-cache"})
+        announcement = r.content.decode('utf-8').strip()
+        return announcement
+    except:
+        print("Could not retrieve announcement from GitHub.\n")
+
+
+
+def main():
+    if not check_for_updates():
+        return
+    print_announcement()
+    
 
     os.system(f"title Kichi779 - Twitch Viewer Bot @kichi#0779 ")
 
     print(Colorate.Vertical(Colors.green_to_cyan, Center.XCenter("""
            
-                                   ▄█   ▄█▄  ▄█    ▄████████    ▄█    █▄     ▄█  
-                                   ███ ▄███▀ ███   ███    ███   ███    ███   ███  
-                                   ███▐██▀   ███▌  ███    █▀    ███    ███   ███▌ 
-                                  ▄█████▀    ███▌  ███         ▄███▄▄▄▄███▄▄ ███▌ 
-                                 ▀▀█████▄    ███▌  ███        ▀▀███▀▀▀▀███▀  ███▌ 
-                                   ███▐██▄   ███   ███    █▄    ███    ███   ███  
-                                   ███ ▀███▄ ███   ███    ███   ███    ███   ███  
-                                   ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
-                                   ▀                                             
-            Improvements can be made to the code. If you're getting an error, visit my discord.
-                                        Discord discord.gg/AFV9m8UXuT    
-                                        Github  github.com/kichi779          
-                       
-                      
-                      """)))
+                       ▄█   ▄█▄  ▄█    ▄████████    ▄█    █▄     ▄█  
+                       ███ ▄███▀ ███   ███    ███   ███    ███   ███  
+                       ███▐██▀   ███▌  ███    █▀    ███    ███   ███▌ 
+                      ▄█████▀    ███▌  ███         ▄███▄▄▄▄███▄▄ ███▌ 
+                     ▀▀█████▄    ███▌  ███        ▀▀███▀▀▀▀███▀  ███▌ 
+                       ███▐██▄   ███   ███    █▄    ███    ███   ███  
+                       ███ ▀███▄ ███   ███    ███   ███    ███   ███  
+                       ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
+                       ▀                                             
+ Improvements can be made to the code. If you're getting an error, visit my discord.
+                             Discord discord.gg/AFV9m8UXuT    
+                             Github  github.com/kichi779    """)))
+    announcement = print_announcement()
+    print("")
+    print(Colors.red, Center.XCenter("ANNOUNCEMENT"))
+    print(Colors.yellow, Center.XCenter(f"{announcement}"))
+    print("")
+    print("")
+    
 
-    # Chrome location
+    proxy_servers = {
+        1: "https://www.blockaway.net",
+        2: "https://www.croxyproxy.com",
+        3: "https://www.croxyproxy.rocks",
+        4: "https://www.croxy.network",
+        5: "https://www.croxy.org",
+        6: "https://www.youtubeunblocked.live",
+        7: "https://www.croxyproxy.net",
+    }
+
+    # Selecting proxy server
+    print(Colors.green,"Proxy Server 1 Is Recommended")
+    print(Colorate.Vertical(Colors.green_to_blue,"Please select a proxy server(1,2,3..):"))
+    for i in range(1, 7):
+        print(Colorate.Vertical(Colors.red_to_blue,f"Proxy Server {i}"))
+    proxy_choice = int(input("> "))
+    proxy_url = proxy_servers.get(proxy_choice)
+
+    twitch_username = input(Colorate.Vertical(Colors.green_to_blue, "Enter your channel name (e.g Kichi779): "))
+    proxy_count = int(input(Colorate.Vertical(Colors.cyan_to_blue, "How many proxy sites do you want to open? (Viewer to send)")))
+
     chrome_path = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
-    # The driver that has the same version as your currently installed Google chrome must be installed.
     driver_path = 'chromedriver.exe'
-
-    twitch_username = input(Colorate.Vertical(Colors.green_to_blue, ("Enter your channel name (e.g Kichi779): ")))
-    proxy_count = int(input(Colorate.Vertical(Colors.cyan_to_blue, ("How many proxy sites do you want to open? (Viewer to send)"))))
 
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     chrome_options.add_argument('--disable-logging')
     chrome_options.add_argument('--log-level=3')
     chrome_options.add_argument('--disable-extensions')
-    chrome_options.add_argument('--headless')
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.binary_location = chrome_path
     driver = webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_options)
 
-    driver.get('https://www.blockaway.net')
-
-    text_box = driver.find_element(By.ID, 'url')
-    text_box.send_keys(f'www.twitch.tv/{twitch_username}')
-    text_box.send_keys(Keys.RETURN)
+    driver.get(proxy_url)
 
     for i in range(proxy_count):
-        driver.execute_script("window.open('https://www.blockaway.net')")
+        driver.execute_script("window.open('" + proxy_url + "')")
         driver.switch_to.window(driver.window_handles[-1])
+        driver.get(proxy_url)
+
         text_box = driver.find_element(By.ID, 'url')
         text_box.send_keys(f'www.twitch.tv/{twitch_username}')
         text_box.send_keys(Keys.RETURN)
 
-    input(Colorate.Vertical(Colors.red_to_blue,("Viewers have all been sent. You can press enter to withdraw the views and the program will close..")))
+    input(Colorate.Vertical(Colors.red_to_blue, "Viewers have all been sent. You can press enter to withdraw the views and the program will close."))
     driver.quit()
 
 
