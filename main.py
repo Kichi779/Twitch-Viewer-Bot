@@ -115,11 +115,9 @@ def main():
     chrome_options.add_argument('--disable-logging')
     chrome_options.add_argument('--log-level=3')
     chrome_options.add_argument('--disable-extensions')
-    chrome_options.add_argument('--headless')
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.binary_location = chrome_path
-    driver = webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
 
     driver.get(proxy_url)
 
