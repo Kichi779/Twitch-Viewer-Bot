@@ -53,7 +53,7 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 # Stars ⭐
 - Send more viewers and monetize ads / 50 Star ⭐ ✔️ 17.05.2023
-- You can send viewers over the internet with just one click without downloading / 100 Star ⭐⭐⭐ ❌
+- It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ❌
 
 # [🛒 Shop](https://kichi779.online/)
   ㅤㅤ  ㅤ
