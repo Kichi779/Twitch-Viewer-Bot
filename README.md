@@ -53,7 +53,7 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 # Stars ⭐
 - Send more viewers and monetize ads / 50 Star ⭐ ✔️ 17.05.2023
-- It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ❌ Coming Soon....
+- It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ✔️ 19.08.2023
 
 # [🛒 Shop](https://kichi779.online/)
   ㅤㅤ  ㅤ
