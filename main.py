@@ -116,9 +116,11 @@ def main():
     driver.get(proxy_url)
 
     for i in range(proxy_count):
-        driver.execute_script("window.open('" + proxy_url + "')")
+        random_proxy_url = selectRandom(proxy_servers)  # Select a random proxy server for this tab
+        driver.execute_script("window.open('" + random_proxy_url + "')")
         driver.switch_to.window(driver.window_handles[-1])
-        driver.get(proxy_url)
+        driver.get(random_proxy_url)
+
 
         text_box = driver.find_element(By.ID, 'url')
         text_box.send_keys(f'www.twitch.tv/{twitch_username}')
