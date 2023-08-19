@@ -1,8 +1,12 @@
 import requests
 import warnings
+import random
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import os
@@ -67,24 +71,13 @@ def main():
     print("")
     
 
-    proxy_servers = {
-        1: "https://www.blockaway.net",
-        2: "https://www.croxyproxy.com",
-        3: "https://www.croxyproxy.rocks",
-        4: "https://www.croxy.network",
-        5: "https://www.croxy.org",
-        6: "https://www.youtubeunblocked.live",
-        7: "https://www.croxyproxy.net",
-    }
+    proxy_servers = ['https://www.blockaway.net', 'https://www.croxyproxy.com', 'https://www.croxyproxy.rocks', 'https://www.croxy.network', 'https://www.croxy.org', 'https://www.youtubeunblocked.live', 'https://www.croxyproxy.net']
+    def selectRandom(proxy_servers):
+        return random.choice(proxy_servers)
 
-    # Selecting proxy server
-    print(Colors.green,"Proxy Server 1 Is Recommended")
-    print(Colorate.Vertical(Colors.green_to_blue,"Please select a proxy server(1,2,3..):"))
-    for i in range(1, 7):
-        print(Colorate.Vertical(Colors.red_to_blue,f"Proxy Server {i}"))
-    proxy_choice = int(input("> "))
-    proxy_url = proxy_servers.get(proxy_choice)
+    proxy_url = selectRandom(proxy_servers)
 
+    print(Colors.red, "Proxy servers are randomly selected every time")
     twitch_username = input(Colorate.Vertical(Colors.green_to_blue, "Enter your channel name (e.g Kichi779): "))
     proxy_count = int(input(Colorate.Vertical(Colors.cyan_to_blue, "How many proxy sites do you want to open? (Viewer to send)")))
     os.system("cls")
@@ -113,9 +106,9 @@ def main():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     chrome_options.add_argument('--disable-logging')
+    chrome_options.add_argument("--lang=en")
     chrome_options.add_argument('--log-level=3')
     chrome_options.add_argument('--disable-extensions')
-    chrome_options.add_argument('--headless')
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(options=chrome_options)
@@ -130,6 +123,30 @@ def main():
         text_box = driver.find_element(By.ID, 'url')
         text_box.send_keys(f'www.twitch.tv/{twitch_username}')
         text_box.send_keys(Keys.RETURN)
+        time.sleep(10)
+
+        element_xpath = "//div[@data-a-target='player-overlay-click-handler']"
+
+        element = driver.find_element(By.XPATH, element_xpath)
+
+        actions = ActionChains(driver)
+
+        actions.move_to_element(element).perform()
+
+        time.sleep(15) ## If you get errors in these parts, extend this time
+
+        ## 160P Settings
+        settings_button = driver.find_element(By.XPATH, "//button[@aria-label='Settings']")
+        settings_button.click()
+
+
+        wait = WebDriverWait(driver, 10)
+        quality_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Quality']")))
+        quality_option.click()
+
+
+        resolution_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(), '160p')]")))
+        resolution_option.click()
 
     input(Colorate.Vertical(Colors.red_to_blue, "Viewers have all been sent. You can press enter to withdraw the views and the program will close."))
     driver.quit()
