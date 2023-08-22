@@ -146,7 +146,8 @@ def main():
         quality_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Quality']")))
         quality_option.click()
 
-
+        time.sleep(15) ## If you get errors in these parts, extend this time
+        
         resolution_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(), '160p')]")))
         resolution_option.click()
 
