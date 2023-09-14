@@ -2,6 +2,9 @@
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
 [Discord](https://discord.gg/fesaScZqpn)ㅤ[Github](https://github.com/Kichi779)ㅤ[Shop](https://kichi779.online/)
 
+### IT DOESN'T WORK ANYMORE
+
+
 
 ### No need for a proxy. ⚠️
 ### Please leave a star for the project. This project is free and open source. ⭐ You can leave a star from the top right. ⭐
