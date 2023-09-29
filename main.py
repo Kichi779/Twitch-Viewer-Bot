@@ -110,9 +110,7 @@ def main():
                        ███▐██▄   ███   ███    █▄    ███    ███   ███  
                        ███ ▀███▄ ███   ███    ███   ███    ███   ███  
                        ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
-                       ▀                                             
- Improvements can be made to the code. If you're getting an error, visit my discord.
-                             Discord discord.gg/fesaScZqpn    
+                       ▀                                               
                              Github  github.com/kichi779    """)))
     announcement = print_announcement()
     print("")
