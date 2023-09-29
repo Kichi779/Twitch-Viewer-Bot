@@ -11,7 +11,7 @@
 
 This software allows you to send viewers to your Twitch live stream without the need for a proxy. The way it works is through Selenium, which enters proxy sites, types the channel name, and then reduces the stream quality to 160p. This allows you to connect to the live stream as a viewer through a proxy without having to pay for one.
 
-- The working logic is simple. [kichi779.online](https://www.kichi779.online/) is a proxy website that connects to the website you want with proxies, and this code automates the process with Selenium.
+- The working logic is simple. croxyproxy is a proxy website that connects to the website you want with proxies, and this code automates the process with Selenium.
 
 ⚠️ it is recommended to use this software on another computer (not the one you are streaming from) or on a computer with a large amount of RAM because it opens a lot of hidden tabs in the background and can send as many viewers as you want to the stream
 
@@ -56,12 +56,6 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 # Stars ⭐
 - Send more viewers and monetize ads / 50 Star ⭐ ✔️ 17.05.2023
 - It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ✔️ 19.08.2023
-
-# [🛒 Shop](https://kichi779.online/)
-  ㅤㅤ  ㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤWebsite: https://kichi779.online/
-
- [![Shop](https://user-images.githubusercontent.com/92625816/230799946-2af1a68f-ebcf-4379-9d00-0921e9c799bb.png)](https://github.com/Kichi779/Kichi779-SMM-Shop)
 
 
 # ⚠️Legal⚠️
