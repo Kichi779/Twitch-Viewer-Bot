@@ -197,7 +197,7 @@ def main():
         
         # Waiting to be on the livestream page        
         wait = WebDriverWait(driver, 240)
-        wait.until(EC.presence_of_element_located((By.XPATH, "//h2[@data-a-target='stream-title']")))
+        wait.until(EC.presence_of_element_located((By.XPATH, "//button[@data-a-target='follow-button']")))
         
         print(f"[{i}] Viewer added.")
         if set_160p == "yes":
