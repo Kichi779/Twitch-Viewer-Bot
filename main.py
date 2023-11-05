@@ -75,12 +75,6 @@ def set_stream_quality(driver, quality):
                 break
 
 
-def main():
-    if not check_for_updates():
-        return
-
-    twitch_username, set_160p = load_settings()
-
 def print_announcement():
     try:
         r = requests.get("https://raw.githubusercontent.com/Kichi779/Twitch-Viewer-Bot/main/announcement.txt", headers={"Cache-Control": "no-cache"})
