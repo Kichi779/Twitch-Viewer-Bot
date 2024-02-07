@@ -189,8 +189,8 @@ def main():
         driver.switch_to.window(driver.window_handles[-1])
         driver.get(random_proxy_url)
         try: 
-            elemente = driver.find_element(By.XPATH, "//*[text()='Consent']")
-            elemente.click()
+            element_consent = driver.find_element(By.XPATH, "//*[text()='Consent']")
+            element_consent.click()
         except NoSuchElementException: 
             return False 
 
