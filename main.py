@@ -7,6 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
 from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import os
@@ -187,7 +188,11 @@ def main():
         driver.execute_script("window.open('" + random_proxy_url + "')")
         driver.switch_to.window(driver.window_handles[-1])
         driver.get(random_proxy_url)
-
+        try: 
+            elemente = driver.find_element(By.XPATH, "//*[text()='Consent']")
+            elemente.click()
+        except NoSuchElementException: 
+            print("element not found") 
 
         text_box = driver.find_element(By.ID, 'url')
         text_box.send_keys(f'www.twitch.tv/{twitch_username}')
