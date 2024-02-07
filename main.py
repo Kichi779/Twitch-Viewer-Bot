@@ -192,7 +192,7 @@ def main():
             elemente = driver.find_element(By.XPATH, "//*[text()='Consent']")
             elemente.click()
         except NoSuchElementException: 
-            print("element not found") 
+            return False 
 
         text_box = driver.find_element(By.ID, 'url')
         text_box.send_keys(f'www.twitch.tv/{twitch_username}')
