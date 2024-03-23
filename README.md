@@ -52,10 +52,6 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 - Send more viewers and monetize ads / 50 Star ⭐ ✔️ 17.05.2023
 - It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ✔️ 19.08.2023
 
-# [![BANANACAT](https://github.com/Kichi779/Twitch-Chat-Bot/assets/92625816/4e649089-fc37-4b73-ab3c-eb57a6ac90ce)](https://play.google.com/store/apps/details?id=com.Bread.BananaCatEscape)
-
- ### My projects are completely free and I don't provide income from this, if you want to support me, please download and try my game, if you like it, if you give 5 stars, you will make me happy and support me
-
 # ⚠️Legal⚠️
 
 The software designed to perform website security testing. The author is not responsible for any illegal use of these programs. This is 100% educational, please do not misuse this tool. 
