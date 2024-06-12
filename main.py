@@ -111,7 +111,8 @@ def main():
                        ███ ▀███▄ ███   ███    ███   ███    ███   ███  
                        ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
                        ▀                                               
-                             Github  github.com/kichi779    """)))
+                             Github  github.com/kichi779
+                             Discord discord.gg/3Wp3amnNr3    """)))
     announcement = print_announcement()
     print("")
     print(Colors.red, Center.XCenter("ANNOUNCEMENT"))
