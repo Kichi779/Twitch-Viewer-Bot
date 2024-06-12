@@ -48,7 +48,7 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 - If the audience delivery takes too long and sends only a few viewers, close the client and reopen it, then repeat the same steps. (Proxy sites can sometimes slow down.)
 
-  # ![kichi779shoppanel](https://github.com/Kichi779/Twitch-Chat-Bot/assets/92625816/e78969b1-80e0-4349-9d0f-872563ba0a14)
+  # ![kichi779shoppanel](https://github.com/Kichi779/Twitch-Chat-Bot/assets/92625816/e78969b1-80e0-4349-9d0f-872563ba0a14)(https://kichi779.com/)
   ## Boost Your Twitch, YouTube, Instagram, and Spotify Accounts with Our SMM Panel!
 
 - ### Twitch Chat TOKENS
