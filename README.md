@@ -1,5 +1,5 @@
 ![219774639-6c550f44-ed0c-4dcd-ba09-f87836dcbaa3 (1)](https://user-images.githubusercontent.com/92625816/223582987-a08243f3-ea2e-401c-adc0-8c58731f1d61.jpg)
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+‎‎‎‎‏‏‎‏‎‏‎‎‏‎‏‎‏‎‏‎ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ‏‎‏‎‏‎[WEBSITE](https://kichi779.com/) ‏‎‏‎‏‎[DISCORD](https://discord.gg/3Wp3amnNr3)
 
 ### No need for a proxy. ⚠️
 ### Please leave a star for the project. This project is free and open source. ⭐ You can leave a star from the top right. ⭐
@@ -48,10 +48,10 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 - If the audience delivery takes too long and sends only a few viewers, close the client and reopen it, then repeat the same steps. (Proxy sites can sometimes slow down.)
 
-  # ![kichi779shoppanel](https://github.com/Kichi779/Twitch-Chat-Bot/assets/92625816/e78969b1-80e0-4349-9d0f-872563ba0a14)(https://kichi779.com/)
+  # [![kichi779shoppanel](https://github.com/Kichi779/Twitch-Chat-Bot/assets/92625816/e78969b1-80e0-4349-9d0f-872563ba0a14)](https://kichi779.com/)
   ## Boost Your Twitch, YouTube, Instagram, and Spotify Accounts with Our SMM Panel!
-
-- ### Twitch Chat TOKENS
+‎‎‎‎‏‏‎‏‎‏‎‎‏‎‏‎‏‎‏‎ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ‏‎‏‎‏‎[WEBSITE](https://kichi779.com/) ‏‎‏‎‏‎[DISCORD](https://discord.gg/3Wp3amnNr3)‏‎
+- Twitch Chat TOKENS
 - Twitch Followers & Views: Enhance your Twitch channel with genuine followers and views to increase your visibility and attract more organic growth.
 - YouTube Subscribers, Likes & Views: Boost your YouTube channel with real subscribers, likes, and views to improve your engagement and ranking.
 - Instagram Followers, Likes & Comments: Grow your Instagram profile with authentic followers, likes, and comments to strengthen your online presence and influence.
