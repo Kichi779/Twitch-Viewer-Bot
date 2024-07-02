@@ -1,21 +1,19 @@
-import os
-import warnings
 import requests
+import warnings
 import random
-import logging
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from colorama import Fore
 from pystyle import Center, Colors, Colorate
+import os
 import time
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# Disable logging from selenium
-logging.getLogger('WDM').setLevel(logging.NOTSET)
-
-# Function to check for updates from GitHub
 def check_for_updates():
     try:
         r = requests.get("https://raw.githubusercontent.com/Kichi779/Twitch-Viewer-Bot/main/version.txt")
@@ -26,91 +24,132 @@ def check_for_updates():
             time.sleep(3)
             return False
         return True
-    except Exception as e:
-        log_error(f"Failed to check for updates: {str(e)}")
+    except:
         return True
 
-# Function to save user settings to settings.txt
-def save_settings(twitch_username):
+def save_settings(twitch_username, set_160p):
     with open('settings.txt', 'w') as file:
         file.write(f"Twitch Username: {twitch_username}\n")
+        file.write(f"Set 160p: {set_160p}\n")
 
-# Function to load user settings from settings.txt
 def load_settings():
     try:
         with open('settings.txt', 'r') as file:
             lines = file.readlines()
-            if len(lines) >= 1:
+            if len(lines) >= 2:
                 twitch_username = lines[0].split(': ')[1].strip()
-                return twitch_username
-    except Exception as e:
-        log_error(f"Failed to load settings: {str(e)}")
-    return None
+                set_160p = lines[1].split(': ')[1].strip()
+                return twitch_username, set_160p
+    except:
+        pass
+    return None, None
 
-# Function to print announcement from announcement.txt
+
+
+
+def set_stream_quality(driver, quality):
+    if quality == "yes":
+        element_xpath = "//div[@data-a-target='player-overlay-click-handler']"
+
+        element = driver.find_element(By.XPATH, element_xpath)
+
+        actions = ActionChains(driver)
+
+        actions.move_to_element(element).perform()
+
+        settings_button = driver.find_element(By.XPATH, "//button[@aria-label='Settings']")
+        settings_button.click()
+
+        wait = WebDriverWait(driver, 10)
+        quality_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Quality']")))
+        quality_option.click()
+
+        time.sleep(15)
+
+        quality_levels = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//div[contains(@class, 'video-quality-option')]")))
+        
+        target_quality = "160p"
+        for level in quality_levels:
+            if target_quality in level.text:
+                level.click()
+                break
+
+
+def main():
+    if not check_for_updates():
+        return
+
+    twitch_username, set_160p = load_settings()
+
 def print_announcement():
     try:
         r = requests.get("https://raw.githubusercontent.com/Kichi779/Twitch-Viewer-Bot/main/announcement.txt", headers={"Cache-Control": "no-cache"})
         announcement = r.content.decode('utf-8').strip()
         return announcement
-    except Exception as e:
-        log_error(f"Failed to retrieve announcement: {str(e)}")
+    except:
         print("Could not retrieve announcement from GitHub.\n")
 
-# Function to get terminal size
-def get_terminal_size():
-    try:
-        rows, columns = os.popen('stty size', 'r').read().split()
-        return int(rows), int(columns)
-    except Exception as e:
-        log_error(f"Failed to get terminal size: {str(e)}")
-        return 24, 80
 
-# Function to log errors to error_log.txt
-def log_error(message):
-    try:
-        with open('error_log.txt', 'a') as file:
-            file.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} ERROR: {message}\n")
-    except Exception as e:
-        print(f"Failed to log error: {str(e)}")
 
-# Main function
 def main():
-    try:
-        if not check_for_updates():
-            return
+    if not check_for_updates():
+        return
+    print_announcement()
+    
+    twitch_username, set_160p = load_settings()
 
-        announcement = print_announcement()
-        print("")
-        print(Colors.red, Center.XCenter("ANNOUNCEMENT"))
-        print(Colors.yellow, Center.XCenter(f"{announcement}"))
-        print("")
-        print("")
+    os.system(f"title Kichi779 - Twitch Viewer Bot @kichi#0779 ")
 
-        proxy_servers = ['https://www.blockaway.net', 'https://www.croxyproxy.com', 'https://www.croxyproxy.rocks', 'https://www.croxy.network', 'https://www.croxy.org', 'https://www.youtubeunblocked.live', 'https://www.croxyproxy.net']
+    print(Colorate.Vertical(Colors.green_to_cyan, Center.XCenter("""
+           
+                       ▄█   ▄█▄  ▄█    ▄████████    ▄█    █▄     ▄█  
+                       ███ ▄███▀ ███   ███    ███   ███    ███   ███  
+                       ███▐██▀   ███▌  ███    █▀    ███    ███   ███▌ 
+                      ▄█████▀    ███▌  ███         ▄███▄▄▄▄███▄▄ ███▌ 
+                     ▀▀█████▄    ███▌  ███        ▀▀███▀▀▀▀███▀  ███▌ 
+                       ███▐██▄   ███   ███    █▄    ███    ███   ███  
+                       ███ ▀███▄ ███   ███    ███   ███    ███   ███  
+                       ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
+                       ▀                                             
+ Improvements can be made to the code. If you're getting an error, visit my discord.
+                             Discord discord.gg/fesaScZqpn    
+                             Github  github.com/kichi779    """)))
+    announcement = print_announcement()
+    print("")
+    print(Colors.red, Center.XCenter("ANNOUNCEMENT"))
+    print(Colors.yellow, Center.XCenter(f"{announcement}"))
+    print("")
+    print("")
+    
 
-        def selectRandom(proxy_servers):
-            return random.choice(proxy_servers)
+    proxy_servers = ['https://www.blockaway.net', 'https://www.croxyproxy.com', 'https://www.croxyproxy.rocks', 'https://www.croxy.network', 'https://www.croxy.org', 'https://www.youtubeunblocked.live', 'https://www.croxyproxy.net']
+    def selectRandom(proxy_servers):
+        return random.choice(proxy_servers)
 
-        proxy_url = selectRandom(proxy_servers)
+    proxy_url = selectRandom(proxy_servers)
 
-        print(Colors.red, "Proxy servers are randomly selected every time")
-        twitch_username = load_settings()
+    print(Colors.red, "Proxy servers are randomly selected every time")
+    if twitch_username is None or set_160p is None:
+        
+        twitch_username = input(Colorate.Vertical(Colors.green_to_blue, "Enter your channel name (e.g Kichi779): "))
+        set_160p = input(Colorate.Vertical(Colors.purple_to_red,"Do you want to set the stream quality to 160p? (yes/no): "))
 
-        if twitch_username is None:
+        save_settings(twitch_username, set_160p)
+
+    else:
+        use_settings = input(Colorate.Vertical(Colors.green_to_blue, "Do you want to use your saved settings? (yes/no): "))
+        if use_settings.lower() == "no":
+            
             twitch_username = input(Colorate.Vertical(Colors.green_to_blue, "Enter your channel name (e.g Kichi779): "))
-            save_settings(twitch_username)
-        else:
-            use_settings = input(Colorate.Vertical(Colors.green_to_blue, "Do you want to use your saved settings? (yes/no): "))
-            if use_settings.lower() == "no":
-                twitch_username = input(Colorate.Vertical(Colors.green_to_blue, "Enter your channel name (e.g Kichi779): "))
-                save_settings(twitch_username)
+            set_160p = input(Colorate.Vertical(Colors.purple_to_red,"Do you want to set the stream quality to 160p? (yes/no): "))
 
-        proxy_count = int(input(Colorate.Vertical(Colors.cyan_to_blue, "How many proxy sites do you want to open? (Viewer to send)")))
+            save_settings(twitch_username, set_160p)
+        
+    proxy_count = int(input(Colorate.Vertical(Colors.cyan_to_blue, "How many proxy sites do you want to open? (Viewer to send)")))
 
-        os.system("cls")
-        try:
-            print(Colorate.Vertical(Colors.green_to_cyan, Center.XCenter("""
+
+    os.system("cls")
+    print(Colorate.Vertical(Colors.green_to_cyan, Center.XCenter("""
            
                        ▄█   ▄█▄  ▄█    ▄████████    ▄█    █▄     ▄█  
                        ███ ▄███▀ ███   ███    ███   ███    ███   ███  
@@ -124,78 +163,65 @@ def main():
  Improvements can be made to the code. If you're getting an error, visit my discord.
                              Discord discord.gg/UkSJP8RUxc    
                              Github  github.com/kichi779    """)))
-        except ValueError:
-            rows, columns = get_terminal_size()
-            print("\n".join([" " * ((columns - len(line)) // 2) + line for line in """
-           
-                       ▄█   ▄█▄  ▄█    ▄████████    ▄█    █▄     ▄█  
-                       ███ ▄███▀ ███   ███    ███   ███    ███   ███  
-                       ███▐██▀   ███▌  ███    █▀    ███    ███   ███▌ 
-                      ▄█████▀    ███▌  ███         ▄███▄▄▄▄███▄▄ ███▌ 
-                     ▀▀█████▄    ███▌  ███        ▀▀███▀▀▀▀███▀  ███▌ 
-                       ███▐██▄   ███   ███    █▄    ███    ███   ███  
-                       ███ ▀███▄ ███   ███    ███   ███    ███   ███  
-                       ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
-                       ▀                                             
- Improvements can be made to the code. If you're getting an error, visit my discord.
-                             Discord discord.gg/UkSJP8RUxc    
-                             Github  github.com/kichi779    """.splitlines()]))
+    print('')
+    print('')
+    print(Colors.red, Center.XCenter("Viewers Send. Please don't hurry. If the viewers does not arrive, turn it off and on and do the same operations"))
 
-        chrome_path = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-        for i in range(proxy_count):
-            proxy_url = selectRandom(proxy_servers)
 
-            chrome_options = webdriver.ChromeOptions()
-            chrome_options.binary_location = chrome_path
-            chrome_options.add_argument('--headless')
-            chrome_options.add_argument('--mute-audio')
-            chrome_options.add_argument('--no-sandbox')
-            chrome_options.add_argument('--disable-dev-shm-usage')
-            chrome_options.add_argument('--disable-gpu')
-            chrome_options.add_argument('--disable-software-rasterizer')
-            chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-            chrome_options.add_argument('--disable-background-networking')
-            chrome_options.add_argument('--disable-background-timer-throttling')
-            chrome_options.add_argument('--disable-backgrounding-occluded-windows')
-            chrome_options.add_argument('--disable-breakpad')
-            chrome_options.add_argument('--disable-client-side-phishing-detection')
-            chrome_options.add_argument('--disable-component-update')
-            chrome_options.add_argument('--disable-default-apps')
-            chrome_options.add_argument('--disable-extensions')
-            chrome_options.add_argument('--disable-features=TranslateUI')
-            chrome_options.add_argument('--disable-hang-monitor')
-            chrome_options.add_argument('--disable-ipc-flooding-protection')
-            chrome_options.add_argument('--disable-popup-blocking')
-            chrome_options.add_argument('--disable-prompt-on-repost')
-            chrome_options.add_argument('--disable-renderer-backgrounding')
-            chrome_options.add_argument('--disable-sync')
-            chrome_options.add_argument('--disable-web-resources')
-            chrome_options.add_argument('--enable-automation')
-            chrome_options.add_argument('--force-fieldtrials=*BackgroundTracing/default/')
-            chrome_options.add_argument('--force-renderer-accessibility')
-            chrome_options.add_argument('--ignore-certificate-errors')
-            chrome_options.add_argument('--metrics-recording-only')
-            chrome_options.add_argument('--no-first-run')
-            chrome_options.add_argument('--password-store=basic')
-            chrome_options.add_argument('--use-mock-keychain')
+    chrome_path = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+    driver_path = 'chromedriver.exe'
 
-            chrome_options.add_argument('--log-level=3')
-            chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    chrome_options.add_argument('--disable-logging')
+    chrome_options.add_argument("--lang=en")
 
-            driver = webdriver.Chrome(options=chrome_options)
-            driver.get(proxy_url)
+    chrome_options.add_argument('--log-level=3')
+    chrome_options.add_argument('--disable-extensions')
+    chrome_options.add_argument("--mute-audio")
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(options=chrome_options)
 
-            search_box = driver.find_element(By.NAME, "q")
-            search_box.send_keys(f"https://www.twitch.tv/{twitch_username}")
-            search_box.send_keys(Keys.RETURN)
+    driver.get(proxy_url)
 
-            print(f"Proxy {i+1}: {proxy_url}")
+    for i in range(proxy_count):
+        random_proxy_url = selectRandom(proxy_servers)  # Select a random proxy server for this tab
+        driver.execute_script("window.open('" + random_proxy_url + "')")
+        driver.switch_to.window(driver.window_handles[-1])
+        driver.get(random_proxy_url)
 
-        print("All proxies have been opened.")
 
-    except Exception as e:
-        log_error(f"Unexpected error: {str(e)}")
-        print("An unexpected error occurred. Please check error_log.txt for details.")
+        text_box = driver.find_element(By.ID, 'url')
+        text_box.send_keys(f'www.twitch.tv/{twitch_username}')
+        text_box.send_keys(Keys.RETURN)
+        time.sleep(10)
 
-if __name__ == "__main__":
+    set_stream_quality(driver, set_160p)
+
+    input(Colorate.Vertical(Colors.red_to_blue, "Viewers have all been sent. You can press enter to withdraw the views and the program will close."))
+    driver.quit()
+
+if __name__ == '__main__':
     main()
+
+# ==========================================
+# Copyright 2023 Kichi779
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+# ==========================================
