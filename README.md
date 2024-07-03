@@ -58,6 +58,9 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 - Instagram Followers, Likes & Comments: Grow your Instagram profile with authentic followers, likes, and comments to strengthen your online presence and influence.
 - Spotify Plays & Followers: Increase your Spotify plays and followers to get your music heard by a wider audience and climb the charts.
 -  ### AND MORE
+-  
+![Animation4](https://github.com/Kichi779/Twitch-Viewer-Bot/assets/92625816/55cde7e4-1579-448e-9fab-a012b7add597)
+
 
 # Stars ⭐
 - Send more viewers and monetize ads / 50 Star ⭐ ✔️ 17.05.2023
