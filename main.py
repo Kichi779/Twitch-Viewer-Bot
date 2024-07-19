@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import os
-import time
+from time import sleep
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -21,7 +21,7 @@ def check_for_updates():
         local_version = open('version.txt', 'r').read().strip()
         if remote_version != local_version:
             print("A new version is available. Please download the latest version from GitHub.")
-            time.sleep(3)
+            sleep(3)
             return False
         return True
     except:
@@ -44,42 +44,38 @@ def load_settings():
         pass
     return None, None
 
-
-
-
-def set_stream_quality(driver, quality):
-    if quality == "yes":
-        element_xpath = "//div[@data-a-target='player-overlay-click-handler']"
-
-        element = driver.find_element(By.XPATH, element_xpath)
-
-        actions = ActionChains(driver)
-
-        actions.move_to_element(element).perform()
-
-        settings_button = driver.find_element(By.XPATH, "//button[@aria-label='Settings']")
-        settings_button.click()
-
-        wait = WebDriverWait(driver, 10)
-        quality_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Quality']")))
-        quality_option.click()
-
-        time.sleep(15)
-
-        quality_levels = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//div[contains(@class, 'video-quality-option')]")))
+def set_stream_quality(driver):
+    wait = WebDriverWait(driver, 15)
+    
+    element_video = None
+    while not element_video:
+        try:
+            # Ad
+            element_video_ad_xpath = "//div[@data-test-selector='sad-overlay']"
+            element_video = driver.find_element(By.XPATH, element_video_ad_xpath)
+        except:
+            # No ad
+            element_video_xpath = "//div[@data-a-target='player-overlay-click-handler']"
+            element_video = driver.find_element(By.XPATH, element_video_xpath)
+        sleep(0.5)
         
-        target_quality = "160p"
-        for level in quality_levels:
-            if target_quality in level.text:
-                level.click()
-                break
+    actions = ActionChains(driver)
 
+    actions.move_to_element(element_video).perform()
 
-def main():
-    if not check_for_updates():
-        return
+    settings_button = driver.find_element(By.XPATH, "//button[@aria-label='Settings']")
+    settings_button.click()
 
-    twitch_username, set_160p = load_settings()
+    
+    
+    quality_option = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Quality']")))
+    quality_option.click()
+
+    quality_levels_parent = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@data-a-target='player-settings-menu']")))
+    quality_levels = quality_levels_parent.find_elements(By.XPATH, './*')
+    
+    last_btn = quality_levels[len(quality_levels)-1]
+    last_btn.click() # Last btn because sometimes 160p not available
 
 def print_announcement():
     try:
@@ -167,10 +163,16 @@ def main():
     print('')
     print(Colors.red, Center.XCenter("Viewers Send. Please don't hurry. If the viewers does not arrive, turn it off and on and do the same operations"))
 
-
-    chrome_path = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
-    driver_path = 'chromedriver.exe'
-
+    # Removing chromedriver.exe because we don't need it
+    if os.path.exists('./chromedriver.exe'):
+        print('chromedriver.exe in current folder, removing')
+        
+        try:
+            os.remove("chromedriver.exe")
+            print('Sucessfully removed chromedriver.exe')
+        except:
+            raise Exception("Cannot remove chromedriver.exe, please do it manually")
+    
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     chrome_options.add_argument('--disable-logging')
@@ -182,22 +184,34 @@ def main():
     chrome_options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(options=chrome_options)
 
-    driver.get(proxy_url)
-
+    print('\n')
+    
     for i in range(proxy_count):
+        print(f"[{i}] Adding viewer")
         random_proxy_url = selectRandom(proxy_servers)  # Select a random proxy server for this tab
         driver.execute_script("window.open('" + random_proxy_url + "')")
         driver.switch_to.window(driver.window_handles[-1])
         driver.get(random_proxy_url)
 
-
         text_box = driver.find_element(By.ID, 'url')
         text_box.send_keys(f'www.twitch.tv/{twitch_username}')
         text_box.send_keys(Keys.RETURN)
-        time.sleep(10)
-
-    set_stream_quality(driver, set_160p)
-
+        
+        # Waiting to be on the livestream page        
+        wait = WebDriverWait(driver, 240)
+        wait.until(EC.presence_of_element_located((By.XPATH, "//button[@data-a-target='follow-button']")))
+        
+        print(f"[{i}] Viewer added.")
+        if set_160p == "yes":
+            try:
+                set_stream_quality(driver)
+                print(f"[{i}] Sucessfully setting the lowest quality")
+            except Exception as err:
+                # raise err
+                print(f"[{i}] Unable to set the lowest quality")
+        
+        print('\n============================\n')
+        
     input(Colorate.Vertical(Colors.red_to_blue, "Viewers have all been sent. You can press enter to withdraw the views and the program will close."))
     driver.quit()
 

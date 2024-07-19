@@ -1,3 +1,1 @@
-@echo off
-pip install -r requirements.txt
-echo Installation is complete.
+python -m venv .venv && .venv\Scripts\activate && pip install -r requirements.txt && echo Installation is complete.
