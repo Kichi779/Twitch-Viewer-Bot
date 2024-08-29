@@ -8,6 +8,7 @@ from pystyle import Center, Colors, Colorate
 import os
 import time
 
+
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 def check_for_updates():
@@ -57,7 +58,7 @@ def main():
                        ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
                        ▀                                             
  Improvements can be made to the code. If you're getting an error, visit my discord.
-                             Discord discord.gg/AFV9m8UXuT    
+                             Discord discord.gg/u4T67NU6xb    
                              Github  github.com/kichi779    """)))
     announcement = print_announcement()
     print("")
@@ -100,7 +101,7 @@ def main():
                        ███   ▀█▀ █▀    ████████▀    ███    █▀    █▀   
                        ▀                                             
  Improvements can be made to the code. If you're getting an error, visit my discord.
-                             Discord discord.gg/AFV9m8UXuT    
+                             Discord discord.gg/u4T67NU6xb    
                              Github  github.com/kichi779    """)))
     print('')
     print('')
@@ -114,10 +115,12 @@ def main():
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     chrome_options.add_argument('--disable-logging')
     chrome_options.add_argument('--log-level=3')
-    chrome_options.add_argument('--disable-extensions')
     chrome_options.add_argument('--headless')
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_argument('--disable-dev-shm-usage')
+    #ADBLOCK EXT
+    extension_path = 'adblock.crx'
+    chrome_options.add_extension(extension_path)
     driver = webdriver.Chrome(options=chrome_options)
 
     driver.get(proxy_url)
