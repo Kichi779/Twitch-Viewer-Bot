@@ -8,7 +8,6 @@ from pystyle import Center, Colors, Colorate
 import os
 import time
 
-
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 def check_for_updates():
@@ -24,10 +23,6 @@ def check_for_updates():
     except:
         return True
 
-
-def main():
-    if not check_for_updates():
-        return
 def print_announcement():
     try:
         r = requests.get("https://raw.githubusercontent.com/Kichi779/Twitch-Viewer-Bot/main/announcement.txt", headers={"Cache-Control": "no-cache"})
@@ -36,13 +31,32 @@ def print_announcement():
     except:
         print("Could not retrieve announcement from GitHub.\n")
 
+def reopen_pages(driver, proxy_url, twitch_username, proxy_count):
+    """THIS IS A FUNCTION THAT TRY BY USING A WHILE LOOP THE VIEWERS BEING STABLE, THIS SHOULD FIX THE VIEWERS "DISAPPEARING" """
+    while True:
+        print(Colors.yellow, Center.XCenter("Closing and re-opening proxy pages..."))
 
+        # Closes all the windows except 1
+        while len(driver.window_handles) > 1:
+            driver.switch_to.window(driver.window_handles[-1])
+            driver.close()
+
+        # Re-open the windows
+        driver.switch_to.window(driver.window_handles[0])
+        for i in range(proxy_count):
+            driver.execute_script("window.open('" + proxy_url + "')")
+            driver.switch_to.window(driver.window_handles[-1])
+            driver.get(proxy_url)
+
+            text_box = driver.find_element(By.ID, 'url')
+            text_box.send_keys(f'www.twitch.tv/{twitch_username}')
+            text_box.send_keys(Keys.RETURN)
+
+        time.sleep(60)  # Wait 60 seconds before doing again the true
 
 def main():
     if not check_for_updates():
         return
-    print_announcement()
-    
 
     os.system(f"title Kichi779 - Twitch Viewer Bot @kichi#0779 ")
 
@@ -60,13 +74,13 @@ def main():
  Improvements can be made to the code. If you're getting an error, visit my discord.
                              Discord discord.gg/u4T67NU6xb    
                              Github  github.com/kichi779    """)))
+
     announcement = print_announcement()
     print("")
     print(Colors.red, Center.XCenter("ANNOUNCEMENT"))
     print(Colors.yellow, Center.XCenter(f"{announcement}"))
     print("")
     print("")
-    
 
     proxy_servers = {
         1: "https://www.blockaway.net",
@@ -107,8 +121,7 @@ def main():
     print('')
     print(Colors.red, Center.XCenter("Viewers Send. Please don't hurry. If the viewers does not arrive, turn it off and on and do the same operations"))
 
-
-    chrome_path = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+    chrome_path = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
     driver_path = 'chromedriver.exe'
 
     chrome_options = webdriver.ChromeOptions()
@@ -118,13 +131,13 @@ def main():
     chrome_options.add_argument('--headless')
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_argument('--disable-dev-shm-usage')
-    #ADBLOCK EXT
+    # ADBLOCK EXT
     extension_path = 'adblock.crx'
     chrome_options.add_extension(extension_path)
     driver = webdriver.Chrome(options=chrome_options)
 
+    # OPEN MAIN PAGES
     driver.get(proxy_url)
-
     for i in range(proxy_count):
         driver.execute_script("window.open('" + proxy_url + "')")
         driver.switch_to.window(driver.window_handles[-1])
@@ -134,9 +147,8 @@ def main():
         text_box.send_keys(f'www.twitch.tv/{twitch_username}')
         text_box.send_keys(Keys.RETURN)
 
-    input(Colorate.Vertical(Colors.red_to_blue, "Viewers have all been sent. You can press enter to withdraw the views and the program will close."))
-    driver.quit()
-
+    # RE-OPEN PERODICALLY THE PAGES
+    reopen_pages(driver, proxy_url, twitch_username, proxy_count)
 
 if __name__ == '__main__':
     main()
