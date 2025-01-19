@@ -41,7 +41,7 @@ def check_for_updates():
                     # Scarica e salva main.py
                     print("Scaricamento di main.py...")
                     main_content = requests.get(main_file_url).content.decode('utf-8')
-                    with open('main.py', 'w') as main_file:
+                    with open('main.py', 'w', encoding='utf-8') as main_file:
                         main_file.write(main_content)
 
                     # Scarica e salva version.txt
