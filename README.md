@@ -2,7 +2,7 @@
 ‎‎‎‎‏‏‎‏‎‏‎‎‏‎‏‎‏‎‏‎ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ‏‎‏‎[WEBSITE](https://kichi779.com/) ‏‎‏‎‏‎[DISCORD](https://discord.gg/3Wp3amnNr3)
 
 ### No need for a proxy. ⚠️
-### Please leave a star for the project. This project is free and open source. ⭐ You can leave a star from the top right. ⭐.
+### Please leave a star for the project. This project is free and open source. ⭐ You can leave a star from the top right. ⭐..
 
 
 This software allows you to send viewers to your Twitch live stream without the need for a proxy. The way it works is through Selenium, which enters proxy sites, types the channel name, and then reduces the stream quality to 160p. This allows you to connect to the live stream as a viewer through a proxy without having to pay for one..
