@@ -53,11 +53,16 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 - Send more viewers and monetize ads / 50 Star ⭐ ✔️ 17.05.2023
 - It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ✔️ 19.08.2023
 
+
 # ⚠️Legal⚠️
 
-The software designed to perform website security testing. The author is not responsible for any illegal use of these programs. This is 100% educational, please do not misuse this tool. 
+This software is designed solely for educational and security research purposes, specifically for website security testing. The author is not responsible for any misuse, illegal activity, or unauthorized access carried out using this tool. By using this software, you acknowledge that any consequences resulting from improper or unethical use are your sole responsibility.
 
-If there is a legal problem, please contact my e-mail address. 
+This software operates using Selenium, an automation framework, and does not collect, store, or process any personal data or sensitive information. It is strictly an automated system designed for legitimate security testing.
+
+Furthermore, this tool has been developed as an educational resource to help users understand data mining algorithms, brute-force attack concepts, and automated testing techniques in an ethical and controlled environment. Any misuse, unauthorized access, or illegal application of this tool is strictly prohibited.
+
+If you have any legal concerns, please contact me via email.
 
 kichi779@protonmail.com
 
