@@ -8,14 +8,18 @@ from pystyle import Center, Colors, Colorate
 import os
 import time
 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# Chromium Variables
+
+# Configs
 chrome_path = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' # Set to "" if you want to use the PATH variable instead
 driver_path = 'chromedriver.exe' # Set to "" to use the PATH variable instead
 twitch_username = "" # Enter your twitch username here
 
 
-warnings.filterwarnings("ignore", category=DeprecationWarning)
+# Other Variables
+stop_command = "Cmd-Q" if os.name == "posix" else "Ctrl-Q"
+
 
 BANNER = Colorate.Vertical(Colors.green_to_cyan, Center.XCenter("""           
        ▄█   ▄█▄  ▄█    ▄████████    ▄█    █▄     ▄█  
@@ -138,7 +142,7 @@ def main():
     # Initializing viewers
     print(BANNER)
     print(Colors.red, "Initializing viewers... Please wait a few minutes... Do not close this window.")
-    print(Colors.red, "If the viewers do not arrive, restart the program with Cmd-Q or Ctrl-Q and try again.")
+    print(Colors.red, f"If the viewers do not arrive, restart the program with {stop_command} and try again.")
     try:
         driver = webdriver.Chrome(options=chrome_options)
         driver.get(proxy_url)
@@ -147,13 +151,12 @@ def main():
             driver.execute_script("window.open('" + proxy_url + "')")
             driver.switch_to.window(driver.window_handles[-1])
             driver.get(proxy_url)
-
             text_box = driver.find_element(By.ID, 'url')
             text_box.send_keys(f'www.twitch.tv/{twitch_username}')
             text_box.send_keys(Keys.RETURN)
         
         input(Colorate.Vertical(Colors.red_to_blue, "Finished initializing viewers. Keep this window open to keep them alive.")
-        input(Colorate.Vertical(Colors.red_to_blue, "If you want to stop them, close this program with Cmd-Q or Ctrl-Q")
+        input(Colorate.Vertical(Colors.red_to_blue, f"If you want to stop them, close this program with {stop_command}.")
 
         # Refresh tabs every 3 minutes
         while True:
