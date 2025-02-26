@@ -10,8 +10,8 @@ import time
 
 
 # Chromium Variables
-chrome_path = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' # Change this to an empty string ("") if you want to use the PATH variable instead
-driver_path = 'chromedriver.exe' # Change to "" to use the PATH variable
+chrome_path = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' # Set to "" if you want to use the PATH variable instead
+driver_path = 'chromedriver.exe' # Set to "" to use the PATH variable
 twitch_username = "" # Enter your twitch username here
 
 
