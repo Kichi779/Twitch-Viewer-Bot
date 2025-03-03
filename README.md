@@ -53,6 +53,17 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 - Send more viewers and monetize ads / 50 Star ⭐ ✔️ 17.05.2023
 - It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ✔️ 19.08.2023
 
+# Support Me 🙋‍♂️
+🚀 If you want to support me and help take this project even further, you can follow my GitHub account by clicking the link below! 🔗
+
+I share these projects completely for free 🎁, and it only takes 10 seconds to follow! ⏳
+
+Even if you don’t follow, just visiting the link and skipping the ads helps me out! 🙌
+
+👉 [[SUPPORT ME]](https://lnk.news/eP)
+
+Thanks for your support! ❤️🔥
+
 
 # ⚠️Legal⚠️
 
