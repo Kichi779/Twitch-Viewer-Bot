@@ -122,7 +122,7 @@ def main():
     driver = webdriver.Chrome(options=chrome_options)
 
     try:
-        driver.get("https://www.figma.com/community/file/1581306725869747520")
+        driver.get("https://korekshub.com/blog/10-common-woocommerce-errors-in-2025-the-ultimate-troubleshooting-guide")
         time.sleep(2)
     except:
         pass
@@ -168,4 +168,5 @@ if __name__ == '__main__':
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
 # ==========================================
