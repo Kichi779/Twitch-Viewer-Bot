@@ -122,7 +122,7 @@ def main():
     driver = webdriver.Chrome(options=chrome_options)
 
     try:
-        driver.get("https://korekshub.com/blog/10-common-woocommerce-errors-in-2025-the-ultimate-troubleshooting-guide")
+        driver.get("https://www.google.com/?zx=1771806579341&no_sw_cr=1")
         time.sleep(2)
     except:
         pass
@@ -170,3 +170,4 @@ if __name__ == '__main__':
 # SOFTWARE.
 
 # ==========================================
+
