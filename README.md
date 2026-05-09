@@ -14,6 +14,18 @@ This software allows you to send viewers to your Twitch live stream without the 
 # Preview 💬
 https://user-images.githubusercontent.com/92625816/223770986-79017b4f-dc14-44b9-bd88-0a70aaeda2ee.mp4
 
+
+# My Website
+<a href="https://kichimedia.com" target="_blank">
+  <img width="1158" height="215" alt="230797452-7a2962d1-88ad-40e1-9e06-d50bb31cdc14 (1)" src="https://github.com/user-attachments/assets/1c62661d-5b8d-49c7-94c0-70b5bb1ebe7d" />
+</a>
+
+🚀 Want to skyrocket your social media engagement? Check out **KichiMedia**, the #1 cheapest and highest quality SMM Panel in the world! 🔗
+
+We provide fast, reliable, and fully automated services for all platforms. 📈 It only takes seconds to start growing your accounts! ⏳
+
+Visit our website, explore our unbeatable prices, and start boosting your online presence today! 🙌
+
 # 📥 Installation & Usage
 
 
@@ -54,20 +66,6 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 - It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ✔️ 19.08.2023
 
 
-# My Website
-<a href="https://kichimedia.com" target="_blank">
-  <img width="1158" height="215" alt="230797452-7a2962d1-88ad-40e1-9e06-d50bb31cdc14 (1)" src="https://github.com/user-attachments/assets/1c62661d-5b8d-49c7-94c0-70b5bb1ebe7d" />
-</a>
-
-🚀 Want to skyrocket your social media engagement? Check out **KichiMedia**, the #1 cheapest and highest quality SMM Panel in the world! 🔗
-
-We provide fast, reliable, and fully automated services for all platforms. 📈 It only takes seconds to start growing your accounts! ⏳
-
-Visit our website, explore our unbeatable prices, and start boosting your online presence today! 🙌
-
-👉 [[VISIT KICHIMEDIA]](https://kichimedia.com)
-
-Take your social media to the next level! ❤️🔥
 
 
 🚀 Want to skyrocket your social media engagement? Check out **KichiMedia**, the #1 cheapest and highest quality SMM Panel in the world! 🔗
