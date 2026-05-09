@@ -1,5 +1,5 @@
 ![219774639-6c550f44-ed0c-4dcd-ba09-f87836dcbaa3 (1)](https://user-images.githubusercontent.com/92625816/223582987-a08243f3-ea2e-401c-adc0-8c58731f1d61.jpg)
-‎‎‎‎‏‏‎‏‎‏‎‎‏‎‏‎‏‎‏‎ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ‏‎‏‎[WEBSITE](https://kichi779.com/) ‏‎‏‎‏‎[DISCORD](https://discord.gg/3Wp3amnNr3)
+‎‎‎‎‏‏‎‏‎‏‎‎‏‎‏‎‏‎‏‎ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ‏‎‏‎[WEBSITE](https://kichimedia.com/) ‏‎‏‎‏‎[DISCORD](https://discord.gg/3Wp3amnNr3)
 
 ### No need for a proxy. ⚠️
 ### Please leave a star for the project. This project is free and open source. ⭐ You can leave a star from the top right. ⭐..
@@ -53,16 +53,20 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 - Send more viewers and monetize ads / 50 Star ⭐ ✔️ 17.05.2023
 - It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ✔️ 19.08.2023
 
-# Support Me 🙋‍♂️
-🚀 If you want to support me and help take this project even further, you can follow my GitHub account by clicking the link below! 🔗
 
-I share these projects completely for free 🎁, and it only takes 10 seconds to follow! ⏳
+<a href="https://kichimedia.com" target="_blank">
+  <img width="1158" height="215" alt="logo" src="https://github.com/user-attachments/assets/6b0a0c8b-bf86-4e43-8d34-cbb1590593a7" />
+</a>
 
-Even if you don’t follow, just visiting the link and skipping the ads helps me out! 🙌
+🚀 Want to skyrocket your social media engagement? Check out **KichiMedia**, the #1 cheapest and highest quality SMM Panel in the world! 🔗
 
-👉 [[SUPPORT ME]](https://lnk.news/eP)
+We provide fast, reliable, and fully automated services for all platforms. 📈 It only takes seconds to start growing your accounts! ⏳
 
-Thanks for your support! ❤️🔥
+Visit our website, explore our unbeatable prices, and start boosting your online presence today! 🙌
+
+👉 [[VISIT KICHIMEDIA]](https://kichimedia.com)
+
+Take your social media to the next level! ❤️🔥
 
 
 # ⚠️Legal⚠️
