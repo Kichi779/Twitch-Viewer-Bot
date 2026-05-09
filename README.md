@@ -54,6 +54,7 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 - It automatically lowers the broadcast quality and prevents the audience drop. / 100 Star ⭐⭐⭐ ✔️ 19.08.2023
 
 
+# My Website
 <a href="https://kichimedia.com" target="_blank">
   <img width="1158" height="215" alt="logo" src="https://github.com/user-attachments/assets/6b0a0c8b-bf86-4e43-8d34-cbb1590593a7" />
 </a>
