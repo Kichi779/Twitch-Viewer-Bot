@@ -58,16 +58,6 @@ pip install -r requirements.txt (Or you can click on install.bat file)
 
 
 
-🚀 Want to skyrocket your social media engagement? Check out **KichiMedia**, the #1 cheapest and highest quality SMM Panel in the world! 🔗
-
-We provide fast, reliable, and fully automated services for all platforms. 📈 It only takes seconds to start growing your accounts! ⏳
-
-Visit our website, explore our unbeatable prices, and start boosting your online presence today! 🙌
-
-👉 [[VISIT KICHIMEDIA]](https://kichimedia.com)
-
-Take your social media to the next level! ❤️🔥
-
 
 # ⚠️Legal⚠️
 
